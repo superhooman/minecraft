@@ -1,0 +1,33 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: minecraft-server
+    ports:
+      - "25565:25565"
+      - "8100:8100"
+    environment:
+      EULA: "TRUE"
+      VERSION: "1.21.4"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      TYPE: FABRIC
+      MODRINTH_PROJECTS: |
+        fabric-api
+        ferrite-core
+        c2me-fabric
+        lithium
+        vmp-fabric:0.2.0+beta.7.192+1.21.4
+        modernfix:5.20.3+mc1.21.4
+        no-chat-reports
+        noisium
+        threadtweak
+        bluemap
+      WHITELIST: |
+        8b0f487549d04b8aa9dcfe2e701a692d
+        4c6fca2a57ff4e439fb121490c3de576
+        b9acbda40bef4f6688303ae754533b7e
+        68fd893772e94eab810fcbb0faa33aad
+        240d3fb629cd41009dfad6f0ade37681
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
