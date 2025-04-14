@@ -1,14 +1,13 @@
-/data/.cache
-/data/.fabric
-/data/bluemap
-/data/cache
-/data/libraries
-/data/logs
-/data/mods
-/data/versions
-/data/world
-/data/.*
-/data/*.jar
-/data/*.json
+data/*
 
+# Server icon
+!data/server-icon.png
+
+!data/config/
+data/config/*
+!data/config/bluemap/
+data/config/bluemap/*
+!data/config/bluemap/core.conf
+
+# .env file
 .env

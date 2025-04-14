@@ -13,10 +13,12 @@ services:
       - "25565:25565"
       - "8100:8100"
     environment:
+      EULA: "TRUE"
       VERSION: "1.21.4"
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD}"
-      MEMORY: 2G
+      MOTD: "superhooman server"
+      MEMORY: 1536M
       TYPE: FABRIC
       MODRINTH_PROJECTS: |
         fabric-api
