@@ -10,3 +10,5 @@
 /data/.*
 /data/*.jar
 /data/*.json
+
+.env
