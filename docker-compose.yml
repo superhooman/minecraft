@@ -49,16 +49,14 @@ services:
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD}"
       MOTD: "superhooman server"
-      MEMORY: 1536M
+      INIT_MEMORY: 1024M
+      MAX_MEMORY: 1536M
       TYPE: FABRIC
       MODRINTH_PROJECTS: |
         fabric-api
         ferrite-core
         c2me-fabric
         lithium
-        vmp-fabric:0.2.0+beta.7.192+1.21.4
-        modernfix:5.20.3+mc1.21.4
-        no-chat-reports
         noisium
         threadtweak
         bluemap
