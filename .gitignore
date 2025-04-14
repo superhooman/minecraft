@@ -14,5 +14,5 @@ data/config/bluemap/*
 
 # certs
 certs
-acme.sh
+acme
 html
