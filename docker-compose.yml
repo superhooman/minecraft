@@ -1,6 +1,6 @@
 services:
   nginx-proxy:
-    image: nginx:alpine
+    image: nginxproxy/nginx-proxy
     container_name: nginx-proxy
     ports:
       - "80:80"
@@ -10,20 +10,20 @@ services:
       - ./html:/usr/share/nginx/html:ro
       - ./certs:/etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    restart: unless-stopped
+    network_mode: bridge
 
-  letsencrypt:
+  acme-companion:
     image: nginxproxy/acme-companion
-    container_name: nginx-letsencrypt
+    container_name: nginx-proxy-acme
     environment:
-      - NGINX_PROXY_CONTAINER=nginx-proxy
       - DEFAULT_EMAIL=iam@superhooman.co
-    volumes:
-      - ./certs:/etc/nginx/certs
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    restart: unless-stopped
-    depends_on:
+    volumes_from:
       - nginx-proxy
+    volumes:
+      - certs:/etc/nginx/certs:rw
+      - acme:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    network_mode: bridge
 
   minecraft:
     image: itzg/minecraft-server
