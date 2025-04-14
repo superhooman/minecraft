@@ -12,5 +12,5 @@ data/config/bluemap/*
 # .env file
 .env
 
-# certbot
-certbot
+# certs
+certs
