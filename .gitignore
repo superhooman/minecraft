@@ -12,7 +12,5 @@ data/config/bluemap/*
 # .env file
 .env
 
-# certs
-certs
-acme
-html
+# nginx
+nginx
