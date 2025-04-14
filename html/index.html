@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./minecraft.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container flex justify">
+        <div class="navbar-brand">mc.superhooman.co</div>
+        <div class="flex player-count">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0H4V2H2V10H4V12H2V14H0V16H2V14H4V12H6V10H4V2H12V10H10V12H12V14H14V16H16V14H14V12H12V10H14V2H12V0Z" fill="currentColor"/>
+            </svg>
+            <div id="player-count">0 online</div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>Добро пожаловать</h1>
+      <p>
+        Ванильный сервер выживания для друзей и семьи. <br />
+        Этот сервер приватный, вход только через whitelist
+      </p>
+      <hr />
+      <h2>Версия игры</h2>
+      <p>
+        Как упоминалось выше, сервер полностью ванильный и работает на версии
+        <code>1.21.4</code> <br />У нас есть Prism инстанс модпака Fabiosly
+        Optimized с некоторыми настройками. <br />Вы можете скачать его здесь:
+      </p>
+      <div class="flex">
+        <a
+          href="https://drive.google.com/file/d/1uMLufo78D3CUs_Er_r7c76h7hCwEDXBb/view?usp=sharing"
+          target="_blank"
+          class="button button-primary"
+          >Скачать</a
+        >
+        <a
+          href="https://drive.google.com/file/d/1GV906_B2rwHwNyg6CntRUfh9dnG4XZtC/preview"
+          target="_blank"
+          class="button button-tertiary"
+          >Инструкция</a
+        >
+      </div>
+      <hr />
+      <h2>Подключение</h2>
+      <p>
+        Чтобы подключиться к серверу, вам необходимо добавить сервер в свой
+        клиент Minecraft. <br />Для этого откройте Minecraft и перейдите в меню
+        «Сетевая игра». <br />Нажмите «Добавить сервер» и введите следующий
+        адрес:
+      </p>
+      <div class="flex">
+        <code class="large" id="server-ip"> mc.superhooman.co </code>
+        <button
+          id="copy-button"
+          onclick="copyIp();"
+          class="button button-tertiary"
+        >
+          скопировать
+        </button>
+      </div>
+      <hr />
+      <h3>Дополнительно</h3>
+      <p>У нас есть онлайн карта</p>
+      <a href="/map" class="button button-secondary">Открыть карту</a>
+    </main>
+    <footer class="bg-primary">
+    </footer>
+  </body>
+  <script type="text/javascript">
+    function copyIp() {
+      const ip = document.getElementById("server-ip");
+      const copyButton = document.getElementById("copy-button");
+      navigator.clipboard
+        .writeText(ip.innerText)
+        .then(() => {
+          copyButton.innerText = "скопировано";
+          setTimeout(() => {
+            copyButton.innerText = "скопировать";
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy: ", err);
+        });
+    }
+
+    function fetchPlayers() {
+        fetch(`/map/maps/world/live/players.json?t=${Date.now()}`)
+          .then((response) => response.json())
+          .then((data) => {
+            const players = data.players;
+            
+            document.getElementById('player-count').innerText = `${players.length} online`;
+          })
+          .catch((error) => {
+            console.error("Error fetching players:", error);
+          });
+    }
+
+    setInterval(fetchPlayers, 5000);
+    fetchPlayers();
+  </script>
+</html>

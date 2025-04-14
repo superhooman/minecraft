@@ -1,1 +1,12 @@
-./data
+/data/.cache
+/data/.fabric
+/data/bluemap
+/data/cache
+/data/libraries
+/data/logs
+/data/mods
+/data/versions
+/data/world
+/data/.*
+/data/*.jar
+/data/*.json
