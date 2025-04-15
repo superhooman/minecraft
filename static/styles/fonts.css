@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Minecraft Seven v2";
+  src: url("../fonts/MinecraftSevenv2-Regular.woff2") format("woff2"),
+    url("../fonts/MinecraftSevenv2-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minecraft Ten";
+  src: url("../fonts/MinecraftTen.woff2") format("woff2"),
+    url("../fonts/MinecraftTen.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

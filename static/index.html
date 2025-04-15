@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>superhooman minecraft server</title>
-    <link href="./minecraft.css" rel="stylesheet" />
+    <link href="./styles/reset.css?v=1" rel="stylesheet" />
+    <link href="./styles/fonts.css?v=1" rel="stylesheet" />
+    <link href="./styles/minecraft.css?v=1" rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar">
       <div class="container flex justify">
         <div class="navbar-brand">mc.superhooman.co</div>
         <div class="flex player-count">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0H4V2H2V10H4V12H2V14H0V16H2V14H4V12H6V10H4V2H12V10H10V12H12V14H14V16H16V14H14V12H12V10H14V2H12V0Z" fill="currentColor"/>
-            </svg>
-            <div id="player-count">0 online</div>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 0H4V2H2V10H4V12H2V14H0V16H2V14H4V12H6V10H4V2H12V10H10V12H12V14H14V16H16V14H14V12H12V10H14V2H12V0Z"
+              fill="currentColor"
+            />
+          </svg>
+          <div id="player-count">0 online</div>
         </div>
       </div>
     </nav>
 
-    <main class="container">
-      <h1>Добро пожаловать</h1>
-      <p>
+    <main class="container main">
+      <h1 class="heading text-size-9">Добро пожаловать</h1>
+      <p class="paragraph">
         Ванильный сервер выживания для друзей и семьи. <br />
         Этот сервер приватный, вход только через whitelist
       </p>
-      <hr />
-      <h2>Версия игры</h2>
-      <p>
+      <hr class="divider" />
+      <h2 class="heading text-size-7">Версия игры</h2>
+      <p class="paragraph">
         Как упоминалось выше, сервер полностью ванильный и работает на версии
-        <code>1.21.4</code> <br />У нас есть Prism инстанс модпака Fabiosly
-        Optimized с некоторыми настройками. <br />Вы можете скачать его здесь:
+        <code class="code">1.21.4</code> <br />У нас есть Prism инстанс модпака
+        Fabiosly Optimized с некоторыми настройками. <br />Вы можете скачать его
+        здесь:
       </p>
       <div class="flex">
         <a
@@ -46,16 +60,16 @@
           >Инструкция</a
         >
       </div>
-      <hr />
-      <h2>Подключение</h2>
-      <p>
+      <hr class="divider" />
+      <h2 class="heading text-size-7">Подключение</h2>
+      <p class="paragraph">
         Чтобы подключиться к серверу, вам необходимо добавить сервер в свой
         клиент Minecraft. <br />Для этого откройте Minecraft и перейдите в меню
         «Сетевая игра». <br />Нажмите «Добавить сервер» и введите следующий
         адрес:
       </p>
       <div class="flex">
-        <code class="large" id="server-ip"> mc.superhooman.co </code>
+        <code class="code large" id="server-ip"> mc.superhooman.co </code>
         <button
           id="copy-button"
           onclick="copyIp();"
@@ -64,13 +78,12 @@
           скопировать
         </button>
       </div>
-      <hr />
-      <h3>Дополнительно</h3>
-      <p>У нас есть онлайн карта</p>
+      <hr class="divider" />
+      <h3 class="heading text-size-6">Дополнительно</h3>
+      <p class="paragraph">У нас есть онлайн карта</p>
       <a href="/map" class="button button-secondary">Открыть карту</a>
     </main>
-    <footer class="bg-primary">
-    </footer>
+    <footer class="footer" />
   </body>
   <script type="text/javascript">
     function copyIp() {
@@ -90,16 +103,18 @@
     }
 
     function fetchPlayers() {
-        fetch(`/map/maps/world/live/players.json?t=${Date.now()}`)
-          .then((response) => response.json())
-          .then((data) => {
-            const players = data.players;
-            
-            document.getElementById('player-count').innerText = `${players.length} online`;
-          })
-          .catch((error) => {
-            console.error("Error fetching players:", error);
-          });
+      fetch(`/map/maps/world/live/players.json?t=${Date.now()}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const players = data.players;
+
+          document.getElementById(
+            "player-count"
+          ).innerText = `${players.length} online`;
+        })
+        .catch((error) => {
+          console.error("Error fetching players:", error);
+        });
     }
 
     setInterval(fetchPlayers, 5000);
