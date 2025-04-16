@@ -20,8 +20,11 @@ div.leaflet-nameplate-pane div:before {
 }
 div.leaflet-nameplate-pane div img.head {
   height: var(--space-5);
+  width: var(--space-5);
   image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges
+  image-rendering: -moz-crisp-edges;
+  --border-width: calc(3px * var(--scaling));
+  border: var(--border-width) solid var(--btn-tertiary-border-color);
 }
 div.leaflet-nameplate-pane {
   font-size: var(--font-size-2);
@@ -70,18 +73,23 @@ div.leaflet-control-layers[class] {
   background-color: var(--gray-11);
   color: var(--gray-2);
   font-size: var(--font-size-3);
-  box-shadow: 0 4px 0 0 var(--gray-a8) inset,-4px 0 0 0 var(--gray-6) inset,0 -4px 0 0 var(--gray-4) inset,4px 0 0 0 var(--gray-a10) inset;
-  border: none;
+  box-shadow: inset 0 calc(-1 * var(--border-width)) 0 0 var(--btn-tertiary-inner-shadow-color), inset var(--border-width) var(--border-width) 0 var(--btn-tertiary-inner-border-lt-color), inset calc(-1 * var(--border-width)) calc(-1 * var(--border-width)) 0 var(--btn-tertiary-inner-border-br-color);
+  --border-width: calc(3px * var(--scaling));
+  background: var(--btn-tertiary-inner-color);
+  background-color: var(--btn-tertiary-inner-color);
+  border: var(--border-width) solid var(--btn-tertiary-border-color);
 }
 .leaflet-tooltip[class] {
   border-radius: 0px;
-  background-color: var(--gray-11);
+  box-shadow: inset 0 calc(-1 * var(--border-width)) 0 0 var(--btn-tertiary-inner-shadow-color), inset var(--border-width) var(--border-width) 0 var(--btn-tertiary-inner-border-lt-color), inset calc(-1 * var(--border-width)) calc(-1 * var(--border-width)) 0 var(--btn-tertiary-inner-border-br-color);
+  --border-width: calc(3px * var(--scaling));
+  background: var(--btn-tertiary-inner-color);
+  background-color: var(--btn-tertiary-inner-color);
+  border: var(--border-width) solid var(--btn-tertiary-border-color);
   color: var(--gray-2);
   font-size: var(--font-size-3);
-  box-shadow: 0 4px 0 0 var(--gray-a8) inset,-4px 0 0 0 var(--gray-6) inset,0 -4px 0 0 var(--gray-4) inset,4px 0 0 0 var(--gray-a10) inset;
   padding: var(--space-2);
   line-height: 1;
-  border: none;
 }
 .leaflet-tooltip[class]::before {
   display: none;
@@ -139,16 +147,25 @@ div.leaflet-control-layers.coordinates {
   border: none;
 }
 .leaflet-control-zoom a[class] {
-  box-shadow: 0 4px 0 0 var(--gray-a8) inset,-4px 0 0 0 var(--gray-6) inset,0 -4px 0 0 var(--gray-4) inset,4px 0 0 0 var(--gray-a10) inset;
-  background-color: var(--gray-11);
-  color: var(--gray-2);
+  --border-width: calc(3px * var(--scaling));
+  background: var(--btn-tertiary-inner-color);
+  background-color: var(--btn-tertiary-inner-color);
+  border: var(--border-width) solid var(--btn-tertiary-border-color);
+  box-shadow: inset 0 calc(-1 * var(--border-width)) 0 0 var(--btn-tertiary-inner-shadow-color), inset var(--border-width) var(--border-width) 0 var(--btn-tertiary-inner-border-lt-color), inset calc(-1 * var(--border-width)) calc(-1 * var(--border-width)) 0 var(--btn-tertiary-inner-border-br-color);
   font-size: var(--font-size-3);
   border-radius: 0!important;
-  border: none!important;
+  padding-bottom: var(--border-width);
   font-family: var(--default-font-family);
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+}
+.leaflet-control-zoom a[class]:active:not(.leaflet-disabled) {
+  padding-bottom: 0;
+  box-shadow: inset var(--border-width) var(--border-width) 0 var(--btn-tertiary-inner-border-lt-color), inset calc(-1 * var(--border-width)) calc(-1 * var(--border-width)) 0 var(--btn-tertiary-inner-border-br-color);
 }
 .leaflet-control-zoom a[class].leaflet-disabled {
   background-color: var(--gray-10);
