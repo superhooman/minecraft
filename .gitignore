@@ -7,9 +7,6 @@ data/*
 data/config/*
 !data/squaremap/
 data/squaremap/*
-!data/squaremap/locale/
-data/squaremap/locale/*
-!data/squaremap/locale/lang-ru.yml
 !data/squaremap/config.yml
 
 # .env file
