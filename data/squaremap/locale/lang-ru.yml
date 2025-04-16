@@ -1,0 +1,138 @@
+# Translators: [FreeMonoid, bottleofench]
+
+render-in-progress: <red>Создание карты для <world> уже в процессе
+render-not-in-progress: <red>Карта для <world> сейчас не создается
+cancelled-render: <green>Создание карты для <world> отменено
+successfully-reset-map: <green>Карта для <world> успешно сброшена
+paused-renders: <green>Создание карты для <world> приостановлено
+unpaused-renders: <green>Создание карты для <world> возобновлено
+command:
+    message:
+        console-must-specify-player: <red>При исполнении этой команды из консоли нужно
+            указать игрока
+        console-must-specify-world: <red>При выполнении этой команды из консоли необходимо
+            указать мир
+        no-such-world: Мир '<world>' не найден
+        map-not-enabled-for-world: Карта для мира '<world>' не включена
+        confirmation-required: <red>Требуется подтверждение. Подтвердите с помощью
+            /<command> confirm.
+        no-pending-commands: <red>У вас нет команд, ожидающих выполнения.
+        progresslogging:
+            enabled: <green>Логирование хода рендеринга включено.
+            disabled: <green>Логирование хода рендеринга выключено.
+            set-rate: <green>Интервал логирования хода рендеринга установлен на </green><seconds>
+                seconds
+            statusmessage: 'Логирование хода рендеринга включено: <enabled>, интервал:
+                <green><seconds></green> seconds'
+        help:
+            help: помощь по команде squaremap
+            command: Команда
+            description: Описание
+            no_description: Нет описания
+            arguments: Аргументы
+            optional: Дополнительно
+            showing_results_for_query: Показаны результаты поиска по запросу
+            no_results_for_query: Нет результатов для запроса
+            available_commands: Доступные команды
+            click_to_show_help: Нажмите, чтобы показать справку для этой команды
+            page_out_of_range: 'Ошибка: Страница <page> не находится в диапазоне [1,
+                <max_pages>]'
+            click_for_next_page: Нажмите для следующей страницы
+            click_for_previous_page: Нажмите для предыдущей страницы
+        exception:
+            command-execution: <red>При попытке выполнить эту команду произошла внутренняя
+                ошибка.
+            no-permission: |-
+                <red>Извините, но у вас нет разрешения на выполнение этой команды.
+                Пожалуйста, свяжитесь с администраторами сервера, если вы считаете, что это ошибка.
+            invalid-argument: <red>Недопустимый аргумент команды<white>:</white> <gray><message>
+            invalid-sender-type: <red>Неверный тип отправителя команды. Вы должны
+                иметь тип <gray><required_sender_type></gray>.
+            invalid-syntax: <red>Неправильный синтаксис команды. Попробуйте так<white>:</white>
+                <gray><correct_syntax>
+        parser-exception:
+            string: '''<input>'' не является допустимой строкой типа <string_mode>'
+            number: '''<input>'' не является действительным числом в диапазоне от
+                <min> до <max>'
+            location:
+                invalid_format: '''<input>'' не является допустимым местоположением.
+                    Требуемый формат<white>:<white> ''<x> <z>'''
+                mixed_local_absolute: Невозможно смешивать локальные и абсолютные
+                    координаты. (либо все координаты используют '^' или ни одна не
+                    использует)
+            selector:
+                malformed: Селектор '<input>' неправильно сформирован
+                too_many_players: В селекторе одного игрока выбрано более 1 игрока
+                non_player_in_player_selector: Неигрок(и), выбран(ы) в селекторе игроков
+    prefix: '<white>[<gradient:#C028FF:#5B00FF>squaremap</gradient>]</white> '
+    description:
+        help: Получить справку по командам squaremap
+        resetmap: Сбросить карту указанного мира
+        confirm: Подтвердить команду, ожидающую выполнения
+        reload: Перезагрузить плагин
+        full-render: Начать создание карты всего указанного мира
+        cancel-render: Отменить создание карты для указанного мира
+        pause-render: Приостановить создание всех карт для указанного мира
+        radius-render: Запустить создание карты в радиусе
+        progresslogging:
+            status: Выводит текущие настройки для логирования хода рендеринга
+            toggle: Включение / выключение логирования хода рендеринга
+            rate: Устанавливает интервал логирования хода рендеринга (в секундах)
+        hide: Скрыть игрока на карте
+        show: Показать игрока на карте
+    argument:
+        optional-world: По умолчанию используется текущий мир игрока
+        optional-center: По умолчанию используется (<white>0<gray>,</gray> 0</white>)
+        optional-player: По умолчанию используется игрок, исполняющий команду (при
+            использовании из консоли необходимо указать игрока)
+        help-query: Поисковый Запрос
+    hide:
+        already-hidden: <red><player> уже скрыт на карте
+        hidden: <green><player> теперь скрыт на карте
+    show:
+        not-hidden: <red><player> не скрыт на карте
+        shown: <green><player> больше не скрыт на карте
+click-to-copy: Нажмите, чтобы скопировать в буфер обмена
+click-for-help: Кликните для помощи
+click-to-confirm: Нажмите для подтверждения
+click-to-toggle: Нажмите для переключения
+plugin-reloaded: <green><name> v<version> перезагружен
+ui:
+    page-title: squaremap - {world}
+    coordinates: Координаты<br/>{x}, {z}
+    sidebar:
+        player-list: Игроки ({cur}/{max})
+        world-list: Миры
+    layers:
+        player-tracker: Игроки
+        world-spawn: Спавн
+        world-border: Граница мира
+log:
+    started-full-render: Начато создание карты всего мира <world>
+    started-radius-render: Начато создание карты в радиусе для мира <world>
+    scanning-region-files: Сканирование файлов регионов...
+    found-total-region-files: Найдено <total> файлов регионов
+    finished-rendering: Завершено создание карты для <world>
+    cancelled-rendering: Создание карты для <world> было прервано
+    resumed-rendering: Создание карты для <world> было возобновлено
+    scanning-region-progress: '(<percent>) Мир: <world> Чанки: <current_chunks>/<total_chunks>
+        Прошло: <elapsed> Осталось: <eta> Скорость: <rate> чанков/c'
+    scanning-region-progress-with-regions: '(<percent>) Мир: <world> Регионы: <current_regions>/<total_regions>
+        Чанки: <current_chunks>/<total_chunks> Прошло: <elapsed> Осталось: <eta> Скорость:
+        <rate> чанков/c'
+    internal-web-disabled: Внутренний веб-сервер отключен в config.yml
+    internal-web-started: Внутренний веб-сервер запущен на <bind>:<port>
+    internal-web-stopped: Внутренний веб-сервер остановлен
+    internal-web-start-error: Не удалось запустить внутренний веб-сервер
+    could-not-create-directory: Не удалось создать папку! <path>
+    could-not-read-region: Не удалось прочитать изображение карты для региона <x>,
+        <z> (изображение повреждено?). Она будет перезаписана.
+    could-not-save-region: Не удалось сохранить карту для региона <x>,<z>
+    internal-web-not-running: Ошибка внутреннего веб-сервера
+    update-checker:
+        fetching-version-information: Получение информации о версии...
+        behind-branch: squaremap отстаёт на <behind> версию(ии) от ветки '<branch>'!
+        download-dev-builds: 'Скачивайте dev-сборки: <link>'
+        unknown-commit: Неизвестный коммит '<commit>', нельзя проверить наличие обновлений.
+        behind-releases: squaremap устарел на <behind> версию(ии).
+        download-release: Загрузите последнюю версию (<latest>) по ссылке <link>.

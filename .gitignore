@@ -5,9 +5,13 @@ data/*
 
 !data/config/
 data/config/*
-!data/config/bluemap/
-data/config/bluemap/*
-!data/config/bluemap/core.conf
+!data/squaremap/
+data/squaremap/*
+!data/squaremap/locale/
+data/squaremap/locale/*
+!data/squaremap/locale/lang-ru.yml
+!data/squaremap/config.yml
+!data/squaremap/advanced.yml
 
 # .env file
 .env

@@ -1,0 +1,279 @@
+:root {
+  --mc-environment-plus_icon_clip-path: polygon(0% 42.857%, 42.857% 42.857%, 42.857% 0%, 57.142% 0%, 57.142% 42.857%, 100% 42.857%, 100% 57.142%, 57.142% 57.142%, 57.142% 100%, 42.857% 100%, 42.857% 57.142%, 0% 57.142%, 0% 42.857%);
+  --mc-environment-cross_icon_clip-path: polygon(0% 14.28%, 14.28% 14.28%, 14.28% 28.57%, 28.57% 28.57%, 28.57% 42.85%, 42.85% 42.85%, 42.85% 57.13%, 28.57% 57.13%, 28.57% 71.41%, 14.28% 71.41%, 14.28% 85.69%, 0% 85.69%, 0 99.97%, 14.28% 99.97%, 14.28% 85.69%, 28.57% 85.69%, 28.57% 71.41%, 42.85% 71.41%, 42.85% 57.13%, 57.13% 57.13%, 57.13% 71.41%, 71.41% 71.41%, 71.41% 85.69%, 85.69% 85.69%, 85.69% 99.97%, 99.97% 99.97%, 99.97% 85.69%, 85.69% 85.69%, 85.69% 71.41%, 71.41% 71.41%, 71.41% 57.13%, 57.13% 57.13%, 57.13% 42.85%, 71.41% 42.85%, 71.41% 28.57%, 85.69% 28.57%, 85.69% 14.28%, 99.97% 14.28%, 99.97% 0%, 85.69% 0%, 85.69% 14.28%, 71.41% 14.28%, 71.41% 28.56%, 57.13% 28.56%, 57.13% 42.85%, 42.85% 42.85%, 42.85% 28.57%, 28.57% 28.57%, 28.57% 14.28%, 14.28% 14.28%, 14.28% 0%, 0% 0%);
+}
+.leaflet-container {
+  font-family: var(--default-font-family);
+}
+#map {
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+img.leaflet-tile {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges
+}
+
+div.leaflet-nameplate-pane div:before {
+  border-color: transparent;
+}
+div.leaflet-nameplate-pane div img.head {
+  height: var(--space-5);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges
+}
+div.leaflet-nameplate-pane {
+  font-size: var(--font-size-2);
+}
+div.leaflet-nameplate-pane div img.armor,
+div.leaflet-nameplate-pane div img.health {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  height: 16px;
+}
+div.leaflet-nameplate-pane div,
+div.leaflet-marker-pane img {
+  transition: all 0.25s;
+}
+div.leaflet-nameplate-pane ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-2);
+  line-height: var(--space-5);
+}
+div.leaflet-nameplate-pane li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1)
+}
+.leaflet-bottom.leaflet-left .link,
+.leaflet-bottom.leaflet-left .coordinates {
+  display: inline-block;
+  float: none;
+}
+div.leaflet-control-layers.link img {
+  width: 32px;
+  height: 32px;
+  vertical-align: bottom;
+  bottom: 0;
+  background-image: url("../images/copy.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 16px 16px;
+}
+div.leaflet-control-layers[class] {
+  padding: var(--space-2);
+  line-height: var(--line-height-1);
+  border-radius: 0px;
+  background-color: var(--gray-11);
+  color: var(--gray-2);
+  font-size: var(--font-size-3);
+  box-shadow: 0 4px 0 0 var(--gray-a8) inset,-4px 0 0 0 var(--gray-6) inset,0 -4px 0 0 var(--gray-4) inset,4px 0 0 0 var(--gray-a10) inset;
+  border: none;
+}
+.leaflet-tooltip[class] {
+  border-radius: 0px;
+  background-color: var(--gray-11);
+  color: var(--gray-2);
+  font-size: var(--font-size-3);
+  box-shadow: 0 4px 0 0 var(--gray-a8) inset,-4px 0 0 0 var(--gray-6) inset,0 -4px 0 0 var(--gray-4) inset,4px 0 0 0 var(--gray-a10) inset;
+  padding: var(--space-2);
+  line-height: 1;
+  border: none;
+}
+.leaflet-tooltip[class]::before {
+  display: none;
+}
+.leaflet-control-layers-toggle[class] {
+  background-image: url("../images/layers.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 24px;
+  height: 24px;
+  background-size: 16px 16px;
+}
+.leaflet-control-layers-expanded[class] {
+  color: var(--gray-2)
+}
+.leaflet-control-layers-selector {
+  appearance: none;
+  position: static;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--gray-8);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leaflet-control-layers-overlays span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.leaflet-control-layers-overlays {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-1);
+  gap: var(--space-2);
+}
+
+.leaflet-control-layers-selector:checked {
+  background-color: var(--green-10);
+  color: var(--green-contrast);
+}
+
+.leaflet-control-layers-selector:checked::after {
+  content: "+";
+}
+
+div.leaflet-control-layers.coordinates {
+  vertical-align: bottom;
+}
+.leaflet-control-zoom[class] {
+  border-radius: 0px;
+  border: none;
+}
+.leaflet-control-zoom a[class] {
+  box-shadow: 0 4px 0 0 var(--gray-a8) inset,-4px 0 0 0 var(--gray-6) inset,0 -4px 0 0 var(--gray-4) inset,4px 0 0 0 var(--gray-a10) inset;
+  background-color: var(--gray-11);
+  color: var(--gray-2);
+  font-size: var(--font-size-3);
+  border-radius: 0!important;
+  border: none!important;
+  font-family: var(--default-font-family);
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+}
+.leaflet-control-zoom a[class].leaflet-disabled {
+  background-color: var(--gray-10);
+  color: var(--gray-7);
+  box-shadow: 0 -4px var(--gray-7) inset;
+}
+.leaflet-control-zoom a[class].leaflet-disabled:last-child {
+  box-shadow: 0 4px var(--gray-7) inset;
+}
+#sidebar {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  padding-left: var(--space-5);
+  z-index: 10000;
+  background-color: var(--gray-7);
+  border-left: var(--space-1) solid var(--gray-6);
+  text-align: right;
+  transition: all 0.25s;
+}
+#sidebar.show {
+  width: calc(240px * var(--scaling));
+  padding-left: 0;
+}
+#sidebar fieldset {
+  clear: right;
+  margin: var(--space-2) 0;
+  border: none;
+  border-top: var(--space-1) solid var(--hr-top-color);
+  box-shadow: 0 var(--space-1) var(--hr-bottom-color) inset;
+  text-align: left;
+  white-space: nowrap;
+}
+
+#sidebar fieldset#players {
+  margin: var(--space-2) 0 0;
+  overflow-y: auto;
+}
+
+#sidebar legend {
+  display: block;
+  margin: var(--space-2);
+  padding: var(--space-2);
+  background-color: var(--gray-7);
+}
+
+#sidebar fieldset a,
+#sidebar fieldset a:visited {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+}
+#sidebar fieldset a.following {
+  background-color: var(--violet-a4);
+}
+#sidebar fieldset a:hover {
+  background-color: var(--gray-a4);
+  cursor: pointer;
+}
+#sidebar fieldset a.following:hover {
+  background-color: var(--violet-a5);
+}
+#sidebar fieldset a .other-world {
+  filter: brightness(50%) !important;
+  font-style: italic;
+}
+#sidebar fieldset a img {
+  vertical-align: middle;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  width: 24px;
+}
+#sidebar fieldset#players a {
+  padding: 10px;
+}
+#sidebar #pin {
+  width: fit-content;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  font-family: inherit;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  text-decoration: none;
+  margin: var(--space-2);
+
+  --border-width: calc(3px * var(--scaling));
+  --letter-spacing: calc(2px * var(--scaling));
+  background: var(--btn-tertiary-inner-color);
+  background-color: var(--btn-tertiary-inner-color);
+  border: var(--border-width) solid var(--btn-tertiary-border-color);
+  box-shadow: inset 0 calc(-1 * var(--border-width)) 0 0 var(--btn-tertiary-inner-shadow-color), inset var(--border-width) var(--border-width) 0 var(--btn-tertiary-inner-border-lt-color), inset calc(-1 * var(--border-width)) calc(-1 * var(--border-width)) 0 var(--btn-tertiary-inner-border-br-color);
+  color: var(--btn-tertiary-text-color);
+}
+
+#sidebar #pin::after {
+  content: "";
+  display: block;
+  width: var(--space-4);
+  height: var(--space-4);
+  background-color: currentColor;
+}
+
+#sidebar #pin.pinned::after {
+  clip-path: var(--mc-environment-cross_icon_clip-path);
+}
+
+#sidebar #pin.unpinned::after {
+  clip-path: var(--mc-environment-plus_icon_clip-path);
+}
+
+#sidebar #pin.pinned:hover {
+  background-color: var(--green-a10);
+  border-color: var(--green-a5);
+  color: var(--green-contrast);
+}
+#sidebar #pin.unpinned:hover {
+  background-color: var(--red-a10);
+  border-color: var(--red-a5);
+  color: var(--red-contrast);
+}

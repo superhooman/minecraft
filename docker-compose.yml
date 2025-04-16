@@ -1,5 +1,8 @@
 services:
   static:
+    # dev purposes
+    # ports:
+    #   - "80:80"
     image: nginx:alpine
     container_name: static
     environment:
@@ -42,7 +45,7 @@ services:
     container_name: minecraft-server
     ports:
       - "25565:25565"
-      - "8100:8100"
+      - "8080:8080"
     environment:
       EULA: "TRUE"
       VERSION: "1.21.4"
@@ -59,7 +62,7 @@ services:
         lithium
         noisium
         threadtweak
-        bluemap
+        squaremap
       OPS: |
         8b0f487549d04b8aa9dcfe2e701a692d
       WHITELIST: |

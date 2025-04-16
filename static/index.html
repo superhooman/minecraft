@@ -103,7 +103,7 @@
     }
 
     function fetchPlayers() {
-      fetch(`/map/maps/world/live/players.json?t=${Date.now()}`)
+      fetch(`/sqmp/tiles/players.json?t=${Date.now()}`)
         .then((response) => response.json())
         .then((data) => {
           const players = data.players;
