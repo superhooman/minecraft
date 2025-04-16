@@ -11,7 +11,6 @@ data/squaremap/*
 data/squaremap/locale/*
 !data/squaremap/locale/lang-ru.yml
 !data/squaremap/config.yml
-!data/squaremap/advanced.yml
 
 # .env file
 .env
