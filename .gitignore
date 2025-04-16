@@ -1,13 +1,8 @@
+.DS_Store
 data/*
 
 # Server icon
 !data/server-icon.png
-
-!data/config/
-data/config/*
-!data/squaremap/
-data/squaremap/*
-!data/squaremap/config.yml
 
 # .env file
 .env
