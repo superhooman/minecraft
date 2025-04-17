@@ -73,6 +73,7 @@ services:
         240d3fb629cd41009dfad6f0ade37681
         45fc2f79c18743299be563b32b0df865
         f28f73bb12d24de2a14fbf073cafde61
+        b6fe1a01bf0f40a4b594aad8a0b384f4
     volumes:
       - ./data:/data
     restart: unless-stopped
