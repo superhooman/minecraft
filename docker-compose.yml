@@ -63,6 +63,7 @@ services:
         noisium
         threadtweak
         squaremap
+        simple-voice-chat
       OPS: |
         8b0f487549d04b8aa9dcfe2e701a692d
       WHITELIST: |
