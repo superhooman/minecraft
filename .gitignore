@@ -3,6 +3,11 @@ data/*
 
 # Server icon
 !data/server-icon.png
+!data/config
+data/config/*
+!data/config/voicechat
+!data/config/voicechat/*
+!data/config/voicechat/voicechat-server.properties
 
 # .env file
 .env
