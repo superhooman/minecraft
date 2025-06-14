@@ -49,6 +49,7 @@ services:
       - "8073:8073"
     environment:
       EULA: "TRUE"
+      HARDCORE: "true"
       VERSION: "1.21.4"
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD}"
