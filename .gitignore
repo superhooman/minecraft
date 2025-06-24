@@ -5,6 +5,9 @@ data/*
 !data/server-icon.png
 !data/config
 data/config/*
+!data/config/Geyser-Fabric
+data/config/Geyser-Fabric/*
+!data/config/Geyser-Fabric/config.yml
 
 # .env file
 .env

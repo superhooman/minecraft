@@ -47,10 +47,10 @@ services:
       - "25565:25565"
       - "8080:8080"
       - "8073:8073"
+      - "19132:19132"
     environment:
       EULA: "TRUE"
-      HARDCORE: "true"
-      VERSION: "1.21.4"
+      VERSION: "1.21.5"
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD}"
       MOTD: "superhooman server"
@@ -65,6 +65,7 @@ services:
         noisium
         threadtweak
         squaremap
+        geyser:qAROYTN2
       OPS: |
         8b0f487549d04b8aa9dcfe2e701a692d
       WHITELIST: |
