@@ -60,6 +60,7 @@ services:
       MODRINTH_PROJECTS: |
         fabric-api
         ferrite-core
+        c2me-fabric
         lithium
         noisium
         threadtweak
@@ -78,6 +79,6 @@ services:
         b6fe1a01bf0f40a4b594aad8a0b384f4
         113197488c5d4520b552e4d1542c8eb9
     volumes:
-      - ./data:/data
-      - ./mods:/mods
+      - ./data:/data:rw
+      - ./mods:/mods:rw
     restart: unless-stopped
