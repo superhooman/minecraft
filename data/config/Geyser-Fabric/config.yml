@@ -5,3 +5,4 @@ bedrock:
 
     # The port that will listen for connections. This is the port that Bedrock players will use to connect to your server.
     port: 19132
+    auth-type: floodgate

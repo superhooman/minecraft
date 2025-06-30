@@ -65,6 +65,7 @@ services:
         threadtweak
         squaremap
         geyser:qAROYTN2
+        floodgate:2.2.4-b44
       OPS: |
         8b0f487549d04b8aa9dcfe2e701a692d
       WHITELIST: |
