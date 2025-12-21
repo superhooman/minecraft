@@ -43,6 +43,7 @@ services:
         f28f73bb12d24de2a14fbf073cafde61
         b6fe1a01bf0f40a4b594aad8a0b384f4
         113197488c5d4520b552e4d1542c8eb9
+        91581944bf8745c8bce01f2ad1718d22
     volumes:
       - ./data:/data:rw
       - ./mods:/mods:rw
